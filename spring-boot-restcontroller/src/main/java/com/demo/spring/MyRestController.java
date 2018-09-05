@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,6 +33,11 @@ public class MyRestController {
 		Employee emp = new Employee();
 		emp.setCity("chennai");
 		emp.setName("John");
+		return emp;
+	}
+
+	@PostMapping(path = "/saveEmployee", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_XML_VALUE)
+	public @ResponseBody Employee getEmployeeInXML(@RequestBody Employee emp) {
 		return emp;
 	}
 }
