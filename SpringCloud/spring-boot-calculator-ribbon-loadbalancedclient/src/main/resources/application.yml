@@ -1,0 +1,14 @@
+logging:
+  pattern:
+    level: debug
+server:
+  port: 8091
+
+spring:
+  application:
+    name: calculator-eureka-loadbalancedclient
+
+ 
+loadbalance-calculator-url-list:
+  ribbon:
+    listOfServers: http://localhost:8081,http://localhost:8082,http://localhost:8082
